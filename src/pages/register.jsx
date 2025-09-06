@@ -22,7 +22,7 @@ export default function Register() {
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-blue-600 text-center mb-6">
           Register at LifeCare
-        </h2>
+        </h2><br></br>
         <form onSubmit={handleRegister} className="space-y-4">
           <input
             type="text"

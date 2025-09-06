@@ -7,7 +7,8 @@ import LoginPage from "./pages/loginpage.jsx";
 import Register from "./pages/register.jsx";
 import Journaling from "./pages/journaling.jsx";
 import Games from "./pages/games.jsx";
-import Profile from "./pages/profile.jsx";  // ✅ Make sure this line is added
+import Profile from "./pages/profile.jsx";  
+import Footer from './pages/footer.jsx';
 
 function App() {
   return (
