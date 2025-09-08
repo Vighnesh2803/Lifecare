@@ -3,55 +3,51 @@ import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (!email || !name) {
-      alert("Please enter both name and email!");
-      return;
+
+    const res = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json();
+
+    if (data.name) {
+      localStorage.setItem("user", JSON.stringify(data));
+      navigate("/dashboard");  // ✅ Redirect to Dashboard after login
+    } else {
+      alert(data.message);
     }
-    const user = { name, email };
-    localStorage.setItem("user", JSON.stringify(user));
-    navigate("/"); // redirect to home
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-blue-600 text-center mb-6">
-          Login to LifeCare
-        </h2><br></br>
-        <form onSubmit={handleLogin} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
-          />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 text-white px-6">
+
+      <form onSubmit={handleLogin} className="bg-white text-gray-800 p-10 rounded-lg shadow-lg space-y-6 max-w-md w-full">
+        <h2 className="text-4xl font-bold text-center text-indigo-700">🚀 LifeCare Login</h2>
+
+        <div className="flex flex-col space-y-4">
+          <label className="font-semibold text-gray-700">Email</label>
           <input
             type="email"
             placeholder="Enter your email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400"
+            className="p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-          >
-            Login
-          </button>
-        </form>
-        <p className="mt-4 text-center text-gray-600">
-          Don’t have an account?{" "}
-          <a href="/register" className="text-blue-600 font-semibold hover:underline">
-            Register
-          </a>
-        </p>
-      </div>
+        </div>
+
+        <button type="submit" className="bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg shadow hover:bg-indigo-700 text-xl w-full">
+          🚀 Login
+        </button>
+      </form>
+
     </div>
   );
 }
+

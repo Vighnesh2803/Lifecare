@@ -4,7 +4,7 @@ export default function Home() {
 
       {/* Title + Tagline */}
       <h1 className="text-5xl font-extrabold mb-8 drop-shadow-2xl text-yellow-300">
-        🚀 LifeCare — Empowering Mental Wellness
+        🚀 LifeCare — Suicide Prevention and Awareness
       </h1><br></br>
 
       <p className="text-3xl max-w-4xl mb-14 leading-relaxed text-gray-100 text-center">
@@ -49,14 +49,13 @@ export default function Home() {
         <h3 className="text-4xl font-semibold text-white mb-6">
           🎥 Why Mental Health is Important
         </h3><br></br>
-        <iframe
+       <iframe>
           className="w-full max-w-3xl h-64 rounded-lg shadow-lg"
-          src="https://www.https://www.youtube.com/watch?v=dpWuf96-G7g&rco=1"
+          src="https://www.youtube.com/embed/4sE0e5kV8JU"
           title="Mental Health Awareness"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
-      </div>
+        </iframe></div>
 
       {/* 💬 Testimonials */}<br></br>
       <div className="mt-20 text-center max-w-5xl">
