@@ -18,36 +18,46 @@ export default function LoginPage() {
 
     if (data.name) {
       localStorage.setItem("user", JSON.stringify(data));
-      navigate("/dashboard");  // ✅ Redirect to Dashboard after login
+      navigate("/dashboard");
     } else {
       alert(data.message);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 text-white px-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-tr from-purple-600 via-indigo-600 to-blue-600 px-6">
 
-      <form onSubmit={handleLogin} className="bg-white text-gray-800 p-10 rounded-lg shadow-lg space-y-6 max-w-md w-full">
-        <h2 className="text-4xl font-bold text-center text-indigo-700">🚀 LifeCare Login</h2>
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-10 rounded-xl shadow-2xl max-w-md w-full text-center"
+      >
+        <h2 className="text-5xl font-bold text-indigo-600 mb-6"> LifeCare Login</h2>
 
-        <div className="flex flex-col space-y-4">
-          <label className="font-semibold text-gray-700">Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            required
-            onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
+        <p className="text-gray-600 mb-8">
+          Welcome back! Enter your email to continue your mental wellness journey.
+        </p>
 
-        <button type="submit" className="bg-indigo-600 text-white font-bold px-6 py-3 rounded-lg shadow hover:bg-indigo-700 text-xl w-full">
+        <input
+          type="email"
+          placeholder="Your email address"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full p-4 border rounded-lg mb-6 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+
+        <button
+          type="submit"
+          className="bg-indigo-600 text-white px-6 py-3 rounded-lg text-xl font-semibold hover:bg-indigo-700 w-full"
+        >
           🚀 Login
         </button>
+
+        <p className="mt-6 text-gray-500">
+          Don't have an account? <a href="/register" className="text-indigo-600 hover:underline">Register now</a>
+        </p>
       </form>
 
     </div>
   );
 }
-

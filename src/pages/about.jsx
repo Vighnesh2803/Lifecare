@@ -1,53 +1,72 @@
 export default function About() {
   return (
-    <section className="min-h-screen w-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white px-6 py-12 flex flex-col items-center">
+    <div className="min-h-screen bg-gray-100 text-gray-800 p-10 flex flex-col">
 
-      <h1 className="text-6xl font-extrabold mb-6 drop-shadow-lg">
-        🌱 About LifeCare
+      <h1 className="text-5xl font-extrabold text-indigo-700 text-center mb-10">
+        🧠 Suicide Prevention Resource Center (SPRC)
       </h1>
 
-      <p className="text-2xl max-w-4xl text-center mb-12 leading-relaxed">
-        LifeCare is your trusted platform empowering mental wellness and suicide prevention.  
-        Through intuitive journaling, calming games, and vital awareness resources, we strive to help every individual navigate their mental health journey.
-      </p>
+      <section className="max-w-4xl mx-auto space-y-8 text-lg leading-relaxed flex-grow">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl">
+        <p>
+          The <strong>Suicide Prevention Resource Center (SPRC)</strong> is the nation’s trusted leader providing comprehensive resources, research, and technical assistance focused on preventing suicide and promoting mental health awareness across communities.
+        </p>
 
-        <div className="bg-white text-indigo-700 p-8 rounded-2xl shadow-lg hover:scale-105 transform transition">
-          <h2 className="text-3xl font-bold mb-4">🎯 Our Vision</h2>
-          <p className="text-lg">
-            A world where mental health is prioritized, stigma-free, and accessible to everyone.
-          </p>
-        </div>
+        <p>
+          🚀 Our mission is to reduce the incidence of suicide by equipping individuals, communities, and professionals with the tools and knowledge they need to support at-risk individuals.
+        </p>
 
-        <div className="bg-white text-indigo-700 p-8 rounded-2xl shadow-lg hover:scale-105 transform transition">
-          <h2 className="text-3xl font-bold mb-4">🚀 Our Mission</h2>
-          <p className="text-lg">
-            To provide an easy-to-use platform that helps individuals track mental health, learn strategies, and get support when needed.
-          </p>
-        </div>
+        <h2 className="text-3xl font-semibold text-indigo-600 mt-10">📚 What SPRC Offers</h2>
 
-        <div className="bg-white text-indigo-700 p-8 rounded-2xl shadow-lg hover:scale-105 transform transition">
-          <h2 className="text-3xl font-bold mb-4">🌐 Our Approach</h2>
-          <p className="text-lg">
-            We combine journaling, interactive games, and awareness resources in one modern platform to promote self-care and prevention.
-          </p>
-        </div>
+        <ul className="list-disc pl-8 space-y-4">
+          <li><strong>Comprehensive Research & Data:</strong> Latest studies and evidence-based strategies guiding prevention efforts.</li>
+          <li><strong>Training & Capacity Building:</strong> Specialized programs to help professionals recognize warning signs and support at-risk individuals.</li>
+          <li><strong>Resource Library:</strong> Downloadable guides, toolkits, brochures, and reports focused on suicide prevention.</li>
+          <li><strong>Technical Assistance & Support:</strong> Expert guidance for communities and organizations implementing local strategies.</li>
+          <li><strong>Community Collaboration:</strong> Helping local agencies and policymakers implement proven practices to reduce suicide risk.</li>
+        </ul>
 
-      </div>
+        <h2 className="text-3xl font-semibold text-indigo-600 mt-10">🌟 Why It Matters</h2>
 
-      <div className="mt-16">
-        <a
-          href="/login"
-          className="bg-yellow-400 text-indigo-800 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-yellow-300 transition transform hover:-translate-y-1 text-2xl"
-        >
-          🚀 Start Your Journey Now
-        </a>
-      </div>
+        <p>
+          Every year, over 700,000 people globally die by suicide, and millions more attempt it.  
+          Suicide is preventable when early interventions like education, awareness, and community support are in place.
+        </p>
 
-      <footer className="mt-28 text-gray-300 text-sm text-center bg-gray-800 py-6 rounded-t-lg w-full">
-        © {new Date().getFullYear()} LifeCare — Empowering mental wellness globally.
-      </footer>
-    </section>
+        <h2 className="text-3xl font-semibold text-indigo-600 mt-10">📊 Key Statistics</h2>
+
+        <ul className="list-disc pl-8 space-y-4">
+          <li>1 in 4 people experience mental health challenges annually.</li>
+          <li>75% do not seek help due to social stigma.</li>
+          <li>Up to 50% of suicides could be prevented with early intervention and awareness.</li>
+        </ul>
+
+        <h2 className="text-3xl font-semibold text-indigo-600 mt-10">🌱 How LifeCare Helps</h2>
+
+        <ul className="list-disc pl-8 space-y-4">
+          <li>📝 Journaling for Self-Reflection — Helps users track mood & thoughts.</li>
+          <li>🎮 Mind Relax Games — Interactive calming exercises to manage stress.</li>
+          <li>📚 Awareness Resources — Scientifically-backed knowledge from SPRC’s best practices.</li>
+        </ul>
+
+        <p className="font-semibold text-indigo-600 mt-8 text-center text-xl">
+          “Together, we can break the silence, reduce stigma, and provide hope for a brighter future.”
+        </p>
+
+        <p className="mt-10 text-center text-gray-700 text-lg">
+          Learn more by visiting the official SPRC website:  
+          <a 
+            href="https://www.sprc.org" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 font-semibold hover:underline"
+          >
+            https://www.sprc.org
+          </a>
+        </p>
+
+      </section>
+
+    </div>
   );
 }
